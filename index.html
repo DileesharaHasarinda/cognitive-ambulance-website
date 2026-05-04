@@ -47,21 +47,6 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <div class="nav-actions">
-      <button id="themeToggle" class="theme-btn" type="button">
-        <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2">
-          <circle cx="12" cy="12" r="5" />
-          <path
-            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-        </svg>
-        <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-      </button>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">☰</button>
-    </div>
   </header>
 
   <!-- =========================
@@ -141,7 +126,6 @@
   ========================== -->
   <section class="section" id="introduction">
     <div class="section-header">
-      <!-- <p class="section-label">1. Introduction</p> -->
       <h2>Introduction</h2>
     </div>
 
@@ -150,13 +134,29 @@
         <p>
           Emergency medical services in Sri Lanka face serious delays caused by traffic congestion,
           non-compliant civilian drivers, ambulance crew fatigue, and incomplete patient information.
+          Previous studies on emergency vehicle prioritization, ambulance tracking, and smart traffic
+          clearance show that traffic congestion directly affects emergency response efficiency
+          <span class="citation">[1]</span>, <span class="citation">[4]</span>, <span class="citation">[5]</span>.
+          Occupational fatigue among emergency responders has also been identified as a major factor
+          that can increase injury risk and reduce responder performance <span class="citation">[2]</span>.
+        </p>
+
+        <p>
+          Incomplete patient information is another major challenge in emergency care. Personal health
+          record systems have been studied as a method to improve health information exchange and
+          patient safety <span class="citation">[3]</span>, while emergency department studies show that digital
+          health record access can support clinician-assessed patient care <span class="citation">[8]</span>.
           These issues reduce response speed, affect patient outcomes, and increase safety risks
           for both responders and patients.
         </p>
+
         <p>
           In addition to human emergency care, veterinary emergency response also suffers from
           fragmented, subjective information. Pet owners often describe symptoms under stress,
           while veterinarians lack access to real-time physiological data before the animal arrives.
+          Recent smart animal health monitoring and AI-IoT pet care studies show the value of
+          real-time physiological tracking in animal care <span class="citation">[10]</span>,
+          <span class="citation">[11]</span>, <span class="citation">[12]</span>.
         </p>
       </div>
 
@@ -165,12 +165,17 @@
           This research proposes an extended Smart Ambulance Ecosystem that integrates four
           complementary edge-optimized components into one unified platform: crew monitoring,
           smartphone-based traffic clearance, patient risk prediction, and AI-powered pre-veterinary
-          emergency triage.
+          emergency triage. Related studies on computer vision-based drowsiness detection and
+          transformer-based driver drowsiness detection demonstrate the potential of AI for
+          safety-critical monitoring tasks <span class="citation">[6]</span>, <span class="citation">[7]</span>.
         </p>
+
         <p>
           The system is designed for low-resource settings, uses Raspberry Pi 5 with Flutter and
           React interfaces, requires no roadside hardware, supports offline fallback, and enables
-          two coordinated phases: transit and arrival handover.
+          two coordinated phases: transit and arrival handover. Clinical text summarization research
+          further supports the use of AI-assisted information processing for improving medical
+          decision support and handover efficiency <span class="citation">[9]</span>.
         </p>
       </div>
     </div>
@@ -181,26 +186,37 @@
   ========================== -->
   <section class="section" id="literature">
     <div class="section-header">
-      <!-- <p class="section-label">2. Literature Review</p> -->
       <h2>Literature Review</h2>
     </div>
 
     <p>
       Previous work in emergency response has examined crew fatigue detection, traffic prioritization,
       portable health records, and clinical summarization as separate research areas. Studies show that
-      occupational fatigue significantly increases injury risk among responders, while infrastructure-heavy
-      traffic solutions remain costly and impractical for broad deployment in rural Sri Lanka. Existing
-      patient-controlled health record systems also lack integrated edge-AI risk prediction and fast,
-      QR-based emergency access.
+      occupational fatigue significantly increases injury risk among responders <span class="citation">[2]</span>,
+      while traffic-based emergency vehicle prioritization approaches mainly focus on ambulance tracking,
+      smart traffic clearance, and signal control mechanisms <span class="citation">[1]</span>, <span
+        class="citation">[4]</span>, <span class="citation">[5]</span>.
+      Existing patient-controlled health record systems support health information exchange and patient
+      safety <span class="citation">[3]</span>, and recent emergency department studies show the potential value
+      of digital health records in clinical decision-making <span class="citation">[8]</span>. However, these
+      systems still lack integrated edge-AI risk prediction, fast QR-based emergency access, and a unified
+      emergency workflow. Clinical summarization research using large language models further shows the
+      potential of automated medical text processing, but it is generally studied separately from emergency
+      response platforms <span class="citation">[9]</span>.
     </p>
 
     <p>
       In veterinary emergency care, recent research on pet wearables and smart health monitoring has
-      shown the value of real-time physiological tracking. However, most existing systems do not combine
-      wearable data, owner-reported symptom input, urgency triage, and pre-arrival veterinary alert
-      packages into one unified emergency workflow. The current literature therefore remains fragmented,
-      with no fully integrated platform covering all critical response stages for both human and companion
-      animal emergencies.
+      shown the value of real-time physiological tracking <span class="citation">[10]</span>, <span
+        class="citation">[11]</span>, <span class="citation">[12]</span>.
+      However, most existing systems do not combine wearable data, owner-reported symptom input,
+      urgency triage, and pre-arrival veterinary alert packages into one unified emergency workflow.
+      Driver drowsiness and fatigue detection studies also demonstrate the usefulness of AI-based monitoring
+      in safety-critical environments <span class="citation">[6]</span>, <span class="citation">[7]</span>, but these
+      approaches
+      are not directly integrated with emergency patient records, responder dispatch, or veterinary response
+      workflows. The current literature therefore remains fragmented, with no fully integrated platform
+      covering all critical response stages for both human and companion animal emergencies.
     </p>
   </section>
 
@@ -287,31 +303,117 @@
   ========================== -->
   <section class="section" id="references">
     <div class="section-header">
-      <!-- <p class="section-label">5. References</p> -->
       <h2>References</h2>
     </div>
 
-    <ol class="references-list">
-      <li>A. Noah and A. John, <em>Adaptive Traffic Light Control and Ambulance Prioritization through Kalman
-          Filter-Based Congestion Prediction and Accident Alerts</em>, 2025.</li>
-      <li>G. Marvin et al., <em>Occupation-Induced Fatigue and Impacts on Emergency First Responders</em>, 2023.</li>
-      <li>J. R. Fricton and D. Davies, <em>Personal Health Records to Improve Health Information Exchange and Patient
-          Safety</em>, 2008.</li>
-      <li>J. Manikandan et al., <em>Smart Traffic Clearance System for Emergency Vehicles</em>, 2024.</li>
-      <li>A. Banshwar et al., <em>An Efficient Approach for Ambulance Tracking System using GPS and GSM</em>, 2021.</li>
-      <li>V. Owen and N. Surantha, <em>Computer Vision-Based Drowsiness Detection Using Handcrafted Feature Extraction
-          for Edge Computing Devices</em>, 2025.</li>
-      <li>O. F. Hassan et al., <em>Real-time driver drowsiness detection using transformer architectures</em>, 2025.
+    <ol class="references-list ieee-references">
+      <li>
+        <span class="ref-number">[1]</span>
+        <span class="ref-text">
+          A. Noah and A. John, “Adaptive traffic light control and ambulance
+          prioritization through Kalman filter-based congestion prediction and
+          accident alerts,” in <em>Proc. Int. Conf. Intelligent Transportation Systems</em>, 2025.
+        </span>
       </li>
-      <li>A. Mullins et al., <em>The effect of My Health Record use in the emergency department</em>, 2022.</li>
-      <li>D. Van Veen et al., <em>Clinical Text Summarization</em>, 2024.</li>
-      <li>Z. Yu et al., <em>Intelligent wearable device for real-time cattle health monitoring</em>, 2024.</li>
-      <li>D. Gowthami et al., <em>Smart animal health monitoring system using IoT</em>, 2023.</li>
-      <li>G. Aravind et al., <em>PawSense: AI-IoT enabled smart pet care for real-time health monitoring</em>, 2025.
+
+      <li>
+        <span class="ref-number">[2]</span>
+        <span class="ref-text">
+          G. Marvin <em>et al.</em>, “Occupation-induced fatigue and impacts on
+          emergency first responders: A systematic review,”
+          <em>Int. J. Environ. Res. Public Health</em>, vol. 20, no. 22, p. 7055, 2023.
+        </span>
+      </li>
+
+      <li>
+        <span class="ref-number">[3]</span>
+        <span class="ref-text">
+          J. R. Fricton and D. Davies, “Personal health records to improve health
+          information exchange and patient safety,” in <em>Advances in Patient Safety</em>.
+          Rockville, MD, USA: Agency for Healthcare Research and Quality, 2008.
+        </span>
+      </li>
+
+      <li>
+        <span class="ref-number">[4]</span>
+        <span class="ref-text">
+          J. Manikandan <em>et al.</em>, “Smart traffic clearance system for
+          emergency vehicles,” <em>Tuijin Jishu/J. Propulsion Technol.</em>,
+          vol. 45, no. 1, pp. 1704–1707, 2024.
+        </span>
+      </li>
+
+      <li>
+        <span class="ref-number">[5]</span>
+        <span class="ref-text">
+          A. Banshwar <em>et al.</em>, “An efficient approach for ambulance tracking
+          system using GPS and GSM,” <em>J. Phys.: Conf. Ser.</em>,
+          vol. 1854, p. 012009, 2021.
+        </span>
+      </li>
+
+      <li>
+        <span class="ref-number">[6]</span>
+        <span class="ref-text">
+          V. Owen and N. Surantha, “Computer vision-based drowsiness detection
+          using handcrafted feature extraction for edge computing devices,”
+          <em>Appl. Sci.</em>, vol. 15, no. 638, 2025.
+        </span>
+      </li>
+
+      <li>
+        <span class="ref-number">[7]</span>
+        <span class="ref-text">
+          O. F. Hassan <em>et al.</em>, “Real-time driver drowsiness detection
+          using transformer architectures,” <em>Sci. Rep.</em>,
+          vol. 15, no. 17493, 2025.
+        </span>
+      </li>
+
+      <li>
+        <span class="ref-number">[8]</span>
+        <span class="ref-text">
+          A. Mullins <em>et al.</em>, “The effect of My Health Record use in the
+          emergency department on clinician-assessed patient care,”
+          <em>BMC Med. Inform. Decis. Mak.</em>, vol. 22, no. 178, 2022.
+        </span>
+      </li>
+
+      <li>
+        <span class="ref-number">[9]</span>
+        <span class="ref-text">
+          D. Van Veen <em>et al.</em>, “Clinical text summarization: Adapting
+          large language models can outperform human experts,”
+          <em>Nature Med.</em>, 2024.
+        </span>
+      </li>
+
+      <li>
+        <span class="ref-number">[10]</span>
+        <span class="ref-text">
+          Z. Yu <em>et al.</em>, “Design of an intelligent wearable device for
+          real-time cattle health monitoring,” <em>Front. Robot. AI</em>,
+          vol. 11, p. 1441960, 2024.
+        </span>
+      </li>
+
+      <li>
+        <span class="ref-number">[11]</span>
+        <span class="ref-text">
+          D. Gowthami <em>et al.</em>, “Smart animal health monitoring system using IoT,”
+          <em>Int. Res. J. Eng. Technol.</em>, vol. 5, no. 5, pp. 247–250, 2023.
+        </span>
+      </li>
+
+      <li>
+        <span class="ref-number">[12]</span>
+        <span class="ref-text">
+          G. Aravind <em>et al.</em>, “PawSense: AI-IoT enabled smart pet care for
+          real-time health monitoring,” in <em>Proc. ICAISS</em>, 2025.
+        </span>
       </li>
     </ol>
   </section>
-
   <!-- =========================
        6. Research Gaps
   ========================== -->
@@ -416,7 +518,6 @@
   ========================== -->
   <section class="section" id="timeline">
     <div class="section-header center">
-      <!-- <p class="section-label">10. Project Timeline</p> -->
       <h2>Project Timeline</h2>
     </div>
 
@@ -424,36 +525,49 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <span class="timeline-date">March 2025</span>
-          <h3>Project Proposal</h3>
-          <p>Proposal presentation and approval of research direction.</p>
+          <span class="timeline-date">Month 1 – 2</span>
+          <h3>Research</h3>
+          <p>
+            Conducted background research, requirement analysis, literature review,
+            and site observations to identify key problems in mushroom cultivation.
+          </p>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <span class="timeline-date">June 2025</span>
-          <h3>Progress Presentation I</h3>
-          <p>Initial review of architecture, datasets, and first-stage implementation.</p>
+          <span class="timeline-date">Month 3 – 7</span>
+          <h3>Development</h3>
+          <p>
+            Designed and developed the Fog-IoT system with sensor monitoring,
+            fog-based processing, cloud integration, machine learning, alerts,
+            and dashboard features.
+          </p>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <span class="timeline-date">July 2025</span>
-          <h3>Research Paper</h3>
-          <p>Formal documentation of methodology, integration, and early evaluation.</p>
+          <span class="timeline-date">Month 8 – 9</span>
+          <h3>Testing</h3>
+          <p>
+            Tested the system under different conditions, evaluated model performance,
+            checked real-time alerts, and validated system reliability.
+          </p>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <span class="timeline-date">November 2025</span>
-          <h3>Final Presentation &amp; Viva</h3>
-          <p>Final system demonstration, defense, and project completion.</p>
+          <span class="timeline-date">Month 10 – 12</span>
+          <h3>Documentation</h3>
+          <p>
+            Completed final thesis, research paper, presentation materials,
+            system documentation, and final improvements.
+          </p>
         </div>
       </div>
     </div>
@@ -495,8 +609,8 @@
         <span>IT22035912</span>
       </div>
       <div class="team-card">
-        <img src="images/ashen.jpeg" alt="Ashen Senarathne" class="team-avatar-img" />
-        <h4>Ashen Senarathne</h4>
+        <img src="images/ashen.jpeg" alt="Ashen Kumarathunga" class="team-avatar-img" />
+        <h4>Ashen Kumarathunga</h4>
         <span>IT22904546</span>
       </div>
     </div>
@@ -507,33 +621,81 @@
   ========================== -->
   <section class="section" id="documents">
     <div class="section-header center">
-      <!-- <p class="section-label">12. Documents</p> -->
       <h2>Documents</h2>
     </div>
 
     <div class="documents-grid">
-      <a class="document-card" href="#" target="_blank" rel="noopener noreferrer">
-        <h3>Project Proposal</h3>
-        <p>Initial concept and research scope</p>
-        <span>proposal.pdf</span>
+      <a class="document-card"
+        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F1%2E%20Project%20Proposal&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
+        target="_blank" rel="noopener noreferrer">
+        <div class="document-content">
+          <h3>Project Proposal</h3>
+          <p>Initial proposal submission</p>
+          <span>Proposal.pdf</span>
+        </div>
       </a>
 
-      <a class="document-card" href="#" target="_blank" rel="noopener noreferrer">
-        <h3>Research Paper</h3>
-        <p>Conference-style paper for the Cognitive Ambulance System</p>
-        <span>paper.pdf</span>
+      <a class="document-card"
+        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F6%2E%20CheckList%20Documents%2FCheckList%20set%201&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2">
+        <div class="document-content">
+          <h3>Checklist 1</h3>
+          <p>First evaluation checklist</p>
+          <span>Checklist1.pdf</span>
+        </div>
       </a>
 
-      <a class="document-card" href="#" target="_blank" rel="noopener noreferrer">
-        <h3>Presentation</h3>
-        <p>System overview, methodology, and evaluation slides</p>
-        <span>slides.pptx</span>
+      <a class="document-card"
+        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F2%2E%20Progress%20Presentation%20%2D%201&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
+        target="_blank" rel="noopener noreferrer">
+        <div class="document-content">
+          <h3>Progress Presentation - 1</h3>
+          <p>First progress review slides</p>
+          <span>Progress_Presentation1.pptx</span>
+        </div>
       </a>
 
-      <a class="document-card" href="#" target="_blank" rel="noopener noreferrer">
-        <h3>Final Report</h3>
-        <p>Complete project report and findings</p>
-        <span>report.pdf</span>
+      <a class="document-card"
+        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F4%2E%20Research%20Paper&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
+        target="_blank" rel="noopener noreferrer">
+        <div class="document-content">
+          <h3>Research Paper</h3>
+          <p>Conference/Journal papers</p>
+          <span>Research_Paper.pdf</span>
+        </div>
+      </a>
+
+      <a class="document-card"
+        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F3%2E%20Progress%20Presentation%20%2D%202&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
+        target="_blank" rel="noopener noreferrer">
+        <div class="document-content">
+          <h3>Progress Presentation - 2</h3>
+          <p>Second progress review slides</p>
+          <span>Progress_Presentation2.pptx</span>
+        </div>
+      </a>
+
+      <div class="document-card multi-file-card">
+        <a href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F5%2E%20Final%20Report%20%26%20Presentation%2FFinal%20Reports&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
+          target="_blank" rel="noopener noreferrer" class="document-content inner-doc-link">
+          <h3>Final Report &amp; Presentation</h3>
+          <p>Final report document and defense slides</p>
+          <span>Final_Report.pdf</span>
+        </a>
+
+        <a href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F5%2E%20Final%20Report%20%26%20Presentation%2FFinal%20Presentation%20PPT&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
+          target="_blank" rel="noopener noreferrer" class="extra-file-link">
+          Final_Presentation.pptx
+        </a>
+      </div>
+
+      <a class="document-card"
+        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F6%2E%20CheckList%20Documents%2FCheckList%20set%202&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
+        target="_blank" rel="noopener noreferrer">
+        <div class="document-content">
+          <h3>Checklist 2</h3>
+          <p>Final evaluation checklist</p>
+          <span>Checklist2.pdf</span>
+        </div>
       </a>
     </div>
   </section>
