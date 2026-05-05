@@ -1,14 +1,67 @@
-// Hide custom cursor on mobile/touch devices
+// =========================
+// APK Download Logic
+// =========================
+// Replace APK_URL with your actual hosted APK path (CDN, S3, or server)
+const APK_URL = 'downloads/cognitive-ambulance-v1.0.0.apk';
+
+function triggerApkDownload(e) {
+  if (e) e.preventDefault();
+  // Show modal
+  document.getElementById('apkModal').classList.add('active');
+  document.getElementById('modalOverlay').classList.add('active');
+
+  // Auto-trigger download after brief delay for UX
+  setTimeout(() => {
+    const link = document.createElement('a');
+    link.href = APK_URL;
+    link.download = 'cognitive-ambulance-v1.0.0.apk';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }, 800);
+}
+
+function closeApkModal() {
+  document.getElementById('apkModal').classList.remove('active');
+  document.getElementById('modalOverlay').classList.remove('active');
+}
+
+document.getElementById('modalClose').addEventListener('click', closeApkModal);
+document.getElementById('modalOverlay').addEventListener('click', closeApkModal);
+
+// =========================
+// Pricing Banner
+// =========================
+const bannerEl = document.getElementById('pricingBanner');
+const navbar = document.getElementById('navbar');
+const bannerClose = document.getElementById('bannerClose');
+const BANNER_HEIGHT = 36;
+
+bannerClose.addEventListener('click', () => {
+  bannerEl.style.display = 'none';
+  navbar.classList.add('banner-hidden');
+  sessionStorage.setItem('bannerClosed', 'true');
+});
+
+// Restore closed state within session
+if (sessionStorage.getItem('bannerClosed')) {
+  bannerEl.style.display = 'none';
+  navbar.classList.add('banner-hidden');
+}
+
+// =========================
+// Custom Cursor (desktop only)
+// =========================
 if (window.innerWidth > 900) {
   const cursor = document.querySelector('.custom-cursor');
   const glow = document.querySelector('.cursor-glow');
-  
+
   if (cursor && glow) {
     document.addEventListener('mousemove', (e) => {
       cursor.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
       glow.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
     });
-    
+
     document.addEventListener('mouseleave', () => {
       cursor.style.opacity = '0';
       glow.style.opacity = '0';
@@ -20,30 +73,9 @@ if (window.innerWidth > 900) {
   }
 }
 
-// Dark mode toggle
-const themeBtn = document.getElementById('themeToggle');
-let isDark = true;
-
-if (themeBtn) {
-  themeBtn.addEventListener('click', () => {
-    isDark = !isDark;
-    if (isDark) {
-      document.documentElement.style.setProperty('--bg-primary', '#0a0c15');
-      document.documentElement.style.setProperty('--bg-secondary', '#11131f');
-      document.documentElement.style.setProperty('--text-primary', '#f0f4fa');
-      document.documentElement.style.setProperty('--text-secondary', '#a0aabe');
-      document.documentElement.style.setProperty('--bg-card', 'rgba(18, 22, 35, 0.85)');
-    } else {
-      document.documentElement.style.setProperty('--bg-primary', '#f0f4fa');
-      document.documentElement.style.setProperty('--bg-secondary', '#ffffff');
-      document.documentElement.style.setProperty('--text-primary', '#1a1f2e');
-      document.documentElement.style.setProperty('--text-secondary', '#4a5568');
-      document.documentElement.style.setProperty('--bg-card', 'rgba(255, 255, 255, 0.85)');
-    }
-  });
-}
-
-// Mobile menu toggle
+// =========================
+// Mobile Menu Toggle
+// =========================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
@@ -53,18 +85,19 @@ if (menuToggle) {
   });
 }
 
-// Close mobile menu on link click
-document.querySelectorAll('.nav-links a').forEach(link => {
+document.querySelectorAll('.nav-links a:not(.nav-apk-btn)').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
   });
 });
 
-// Smooth scroll for anchor links
+// =========================
+// Smooth Scroll
+// =========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+  anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
-    if (href === "#" || href === "") return;
+    if (href === '#' || href === '') return;
     const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
@@ -73,23 +106,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Tools & Tech - One by one list
+// =========================
+// Tech Stack Badges
+// =========================
 const toolsAndTech = [
-  "Flutter mobile application for ambulance, patient, and pet-owner interfaces",
-  "React web dashboard for EMS monitoring, hospital handover, and veterinary portal access",
-  "Raspberry Pi 5 with TensorFlow Lite",
-  "Quantization and pruning for optimized inference",
+  "Flutter mobile application",
+  "React EMS dashboard",
+  "Raspberry Pi 5",
+  "TensorFlow Lite",
+  "Quantization & Pruning",
   "MQTT messaging protocol",
   "Firebase Cloud Messaging",
   "Firebase Realtime Database",
-  "AWS Lambda serverless functions",
+  "AWS Lambda serverless",
   "MediaPipe Face Landmarker",
-  "MobileNetV2 CNN + LSTM for fatigue detection",
-  "Random Forest classifier for traffic behavior",
-  "GPS and accelerometer API for smartphone sensing",
-  "OpenCV for image preprocessing",
-  "Python for backend and model training",
-  "Git/GitHub for version control"
+  "MobileNetV2 CNN + LSTM",
+  "Random Forest classifier",
+  "GPS & accelerometer sensing",
+  "OpenCV preprocessing",
+  "Python backend & training",
+  "Git / GitHub"
 ];
 
 const techStackContainer = document.getElementById('techStackList');
@@ -102,37 +138,41 @@ if (techStackContainer) {
   });
 }
 
-// Contact form handler
+// =========================
+// Contact Form
+// =========================
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    formMessage.textContent = '✓ Thank you! Your message has been sent successfully.';
+    formMessage.textContent = '✓ Message received. Our team will respond within 24 hours.';
     formMessage.style.color = '#2ecc71';
     contactForm.reset();
-    setTimeout(() => {
-      formMessage.textContent = '';
-    }, 4000);
+    setTimeout(() => { formMessage.textContent = ''; }, 5000);
   });
 }
 
-// Navbar scroll effect
+// =========================
+// Navbar Scroll Effect
+// =========================
 window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  if (navbar) {
+  const navbarEl = document.querySelector('.navbar');
+  if (navbarEl) {
     if (window.scrollY > 50) {
-      navbar.style.background = 'rgba(10, 12, 21, 0.95)';
-      navbar.style.backdropFilter = 'blur(20px)';
+      navbarEl.style.background = 'rgba(10, 12, 21, 0.97)';
+      navbarEl.style.backdropFilter = 'blur(24px)';
     } else {
-      navbar.style.background = 'rgba(10, 12, 21, 0.85)';
+      navbarEl.style.background = 'rgba(10, 12, 21, 0.85)';
     }
   }
 });
 
-// Intersection Observer for scroll animations
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -20px 0px' };
+// =========================
+// Intersection Observer (scroll animations)
+// =========================
+const observerOptions = { threshold: 0.08, rootMargin: '0px 0px -20px 0px' };
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -142,6 +182,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-document.querySelectorAll('.card, .feature-card, .timeline-item, .team-card, .document-card').forEach(el => {
+document.querySelectorAll('.card, .feature-card, .team-card, .pricing-card').forEach(el => {
   observer.observe(el);
 });

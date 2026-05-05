@@ -6,12 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cognitive Ambulance System | Edge-AI EMS Platform</title>
   <meta name="description"
-    content="Unified edge-AI platform for crew fatigue and stress monitoring, smartphone-based traffic clearance, patient risk prediction, and pre-veterinary emergency triage." />
+    content="The enterprise edge-AI platform for crew safety monitoring, smart traffic clearance, patient risk prediction, and pre-veterinary emergency triage. Subscribe from LKR 150,000/month." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -19,34 +17,40 @@
   <div class="cursor-glow"></div>
   <div class="custom-cursor"></div>
 
+  <!-- Pricing Banner -->
+  <div class="pricing-banner" id="pricingBanner">
+    <span class="banner-pulse"></span>
+    <p>🚀 Now available for enterprise deployment &mdash; <strong>LKR 150,000 / month</strong> &mdash; Full platform access, SLA-backed uptime, and dedicated onboarding. <a href="#pricing" class="banner-link">See Plans →</a></p>
+    <button class="banner-close" id="bannerClose">✕</button>
+  </div>
+
   <!-- =========================
        Header
   ========================== -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <a href="#home" class="logo">
       <div class="logo-mark">CA</div>
       <div class="logo-text">
         <span class="logo-title">Cognitive Ambulance</span>
-        <!-- <span class="logo-subtitle">System</span> -->
       </div>
     </a>
 
     <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
-      <a href="#introduction">Introduction</a>
-      <!-- <a href="#literature">Literature</a>
-      <a href="#components">Components</a> -->
-      <a href="#references">References</a>
-      <!-- <a href="#gaps">Research Gaps</a> -->
-      <!-- <a href="#questions">Questions</a> -->
-      <!-- <a href="#objectives">Objectives</a> -->
-      <a href="#tools">Tools &amp; Tech</a>
-      <!-- <a href="#timeline">Timeline</a> -->
+      <a href="#introduction">Platform</a>
+      <a href="#tools">Tech Stack</a>
+      <a href="#pricing">Pricing</a>
       <a href="#team">Team</a>
-      <a href="#documents">Documents</a>
       <a href="#contact">Contact</a>
+      <a href="#" class="nav-apk-btn" id="navApkBtn" onclick="triggerApkDownload(event)">
+        ⬇ Download APK
+      </a>
     </nav>
 
+    <div class="nav-actions">
+      <a href="#" class="btn apk-btn-desktop" id="apkBtnDesktop" onclick="triggerApkDownload(event)">⬇ Download APK</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
   </header>
 
   <!-- =========================
@@ -57,18 +61,18 @@
     <div class="hero-text">
       <div class="hero-badge">
         <span class="pulse-dot"></span>
-        <p class="tagline">Edge AI • Smart EMS • Real-Time Emergency Coordination</p>
+        <p class="tagline">Edge AI &bull; Smart EMS &bull; Real-Time Emergency Coordination</p>
       </div>
       <h1>A Unified Edge-AI Platform for Faster, Safer Emergency Services</h1>
       <p>
-        The Cognitive Ambulance System is an extended smart emergency ecosystem that combines
-        crew fatigue and stress monitoring, smartphone-based traffic clearance, patient risk
-        prediction, and pre-veterinary emergency triage into one integrated low-power platform.
+        The Cognitive Ambulance System integrates crew fatigue monitoring, smartphone-based traffic
+        clearance, patient risk prediction, and pre-veterinary emergency triage into one
+        low-power, production-ready platform.
       </p>
 
       <div class="hero-buttons">
-        <a href="#introduction" class="btn primary">Explore Research</a>
-        <a href="#components" class="btn secondary">View Components</a>
+        <a href="#pricing" class="btn primary">View Pricing</a>
+        <a href="#" class="btn secondary apk-hero-btn" onclick="triggerApkDownload(event)">⬇ Download APK</a>
       </div>
 
       <div class="hero-stats">
@@ -95,7 +99,7 @@
         <div class="hero-ambulance-card">
           <div class="ambulance-top">
             <span class="badge-live">Live EMS</span>
-            <span class="badge-system">4 Components Active</span>
+            <span class="badge-system">4 Modules Active</span>
           </div>
 
           <div class="ambulance-grid">
@@ -122,471 +126,229 @@
   </section>
 
   <!-- =========================
-       1. Introduction
+       Platform Overview (Introduction)
   ========================== -->
   <section class="section" id="introduction">
     <div class="section-header">
-      <h2>Introduction</h2>
+      <p class="section-label">Platform Overview</p>
+      <h2>Built for the Real World of Emergency Response</h2>
     </div>
 
     <div class="content-grid two-col">
       <div>
         <p>
-          Emergency medical services in Sri Lanka face serious delays caused by traffic congestion,
+          Emergency medical services face critical delays caused by traffic congestion,
           non-compliant civilian drivers, ambulance crew fatigue, and incomplete patient information.
-          Previous studies on emergency vehicle prioritization, ambulance tracking, and smart traffic
-          clearance show that traffic congestion directly affects emergency response efficiency
-          <span class="citation">[1]</span>, <span class="citation">[4]</span>, <span class="citation">[5]</span>.
-          Occupational fatigue among emergency responders has also been identified as a major factor
-          that can increase injury risk and reduce responder performance <span class="citation">[2]</span>.
+          The Cognitive Ambulance System is purpose-built to eliminate these failure points with
+          edge-AI running directly on Raspberry Pi 5 — no cloud latency, no connectivity dependency.
         </p>
-
         <p>
-          Incomplete patient information is another major challenge in emergency care. Personal health
-          record systems have been studied as a method to improve health information exchange and
-          patient safety <span class="citation">[3]</span>, while emergency department studies show that digital
-          health record access can support clinician-assessed patient care <span class="citation">[8]</span>.
-          These issues reduce response speed, affect patient outcomes, and increase safety risks
-          for both responders and patients.
-        </p>
-
-        <p>
-          In addition to human emergency care, veterinary emergency response also suffers from
-          fragmented, subjective information. Pet owners often describe symptoms under stress,
-          while veterinarians lack access to real-time physiological data before the animal arrives.
-          Recent smart animal health monitoring and AI-IoT pet care studies show the value of
-          real-time physiological tracking in animal care <span class="citation">[10]</span>,
-          <span class="citation">[11]</span>, <span class="citation">[12]</span>.
+          Our crew monitoring module uses MediaPipe Face Landmarker with a quantized MobileNetV2 CNN
+          and LSTM to deliver 90.28% accurate fatigue detection. The traffic clearance module achieves
+          87.92% behavioral prediction accuracy from smartphone sensors alone, with zero roadside
+          hardware required.
         </p>
       </div>
-
       <div>
         <p>
-          This research proposes an extended Smart Ambulance Ecosystem that integrates four
-          complementary edge-optimized components into one unified platform: crew monitoring,
-          smartphone-based traffic clearance, patient risk prediction, and AI-powered pre-veterinary
-          emergency triage. Related studies on computer vision-based drowsiness detection and
-          transformer-based driver drowsiness detection demonstrate the potential of AI for
-          safety-critical monitoring tasks <span class="citation">[6]</span>, <span class="citation">[7]</span>.
+          Patient risk prediction combines QR-enabled digital health profiles with edge-AI
+          classification, producing AI-generated clinical summaries for faster, better-informed
+          hospital handover. All inference runs in under 50 ms on-device.
         </p>
-
         <p>
-          The system is designed for low-resource settings, uses Raspberry Pi 5 with Flutter and
-          React interfaces, requires no roadside hardware, supports offline fallback, and enables
-          two coordinated phases: transit and arrival handover. Clinical text summarization research
-          further supports the use of AI-assisted information processing for improving medical
-          decision support and handover efficiency <span class="citation">[9]</span>.
+          The pre-veterinary triage module fuses wearable pet vitals with owner-reported symptoms,
+          generating urgency classification and a Pre-Vet Alert Package delivered to the clinic
+          before the animal arrives. All four modules operate in parallel on a single low-power
+          platform with offline fallback.
         </p>
       </div>
     </div>
-  </section>
 
-  <!-- =========================
-       2. Literature Review
-  ========================== -->
-  <section class="section" id="literature">
-    <div class="section-header">
-      <h2>Literature Review</h2>
-    </div>
-
-    <p>
-      Previous work in emergency response has examined crew fatigue detection, traffic prioritization,
-      portable health records, and clinical summarization as separate research areas. Studies show that
-      occupational fatigue significantly increases injury risk among responders <span class="citation">[2]</span>,
-      while traffic-based emergency vehicle prioritization approaches mainly focus on ambulance tracking,
-      smart traffic clearance, and signal control mechanisms <span class="citation">[1]</span>, <span
-        class="citation">[4]</span>, <span class="citation">[5]</span>.
-      Existing patient-controlled health record systems support health information exchange and patient
-      safety <span class="citation">[3]</span>, and recent emergency department studies show the potential value
-      of digital health records in clinical decision-making <span class="citation">[8]</span>. However, these
-      systems still lack integrated edge-AI risk prediction, fast QR-based emergency access, and a unified
-      emergency workflow. Clinical summarization research using large language models further shows the
-      potential of automated medical text processing, but it is generally studied separately from emergency
-      response platforms <span class="citation">[9]</span>.
-    </p>
-
-    <p>
-      In veterinary emergency care, recent research on pet wearables and smart health monitoring has
-      shown the value of real-time physiological tracking <span class="citation">[10]</span>, <span
-        class="citation">[11]</span>, <span class="citation">[12]</span>.
-      However, most existing systems do not combine wearable data, owner-reported symptom input,
-      urgency triage, and pre-arrival veterinary alert packages into one unified emergency workflow.
-      Driver drowsiness and fatigue detection studies also demonstrate the usefulness of AI-based monitoring
-      in safety-critical environments <span class="citation">[6]</span>, <span class="citation">[7]</span>, but these
-      approaches
-      are not directly integrated with emergency patient records, responder dispatch, or veterinary response
-      workflows. The current literature therefore remains fragmented, with no fully integrated platform
-      covering all critical response stages for both human and companion animal emergencies.
-    </p>
-  </section>
-
-  <!-- =========================
-       3. Key Insights
-  ========================== -->
-  <section class="section" id="insights">
-    <div class="section-header">
-      <!-- <p class="section-label">3. Key Insights</p> -->
-      <h2>Key Insights</h2>
-    </div>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>Low-Resource Relevance</h3>
-        <p>Emergency systems in Sri Lanka need low-cost, hardware-light, and offline-capable solutions.</p>
-      </div>
-      <div class="card">
-        <h3>Parallel Intelligence</h3>
-        <p>Fatigue monitoring, road clearance, patient risk prediction, and veterinary triage can run together.</p>
-      </div>
-      <div class="card">
-        <h3>Edge-First Advantage</h3>
-        <p>Local inference reduces latency and improves resilience under unstable connectivity conditions.</p>
-      </div>
-      <div class="card">
-        <h3>Unified Handover</h3>
-        <p>AI-generated summaries and risk insights support faster, better-informed treatment decisions.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================
-       4. Core Components
-  ========================== -->
-  <section class="section" id="components">
-    <div class="section-header">
-      <!-- <p class="section-label">4. Core Components</p> -->
-      <h2>Core Components</h2>
-    </div>
-
-    <div class="card-grid">
+    <!-- Core components inline -->
+    <div class="card-grid" style="margin-top:2.5rem;">
       <div class="feature-card">
         <span class="feature-number">01</span>
         <h3>Crew Fatigue &amp; Stress Monitoring</h3>
-        <p>
-          Uses MediaPipe Face Landmarker, a quantized MobileNetV2 CNN, and LSTM to monitor
-          ambulance driver and paramedic fatigue and stress through PERCLOS, EAR, head pose,
-          and mouth-pattern indicators.
-        </p>
+        <p>PERCLOS, EAR, head pose, and mouth-pattern fusion via CNN + LSTM on Raspberry Pi 5. Real-time push alerts to dispatch.</p>
       </div>
-
       <div class="feature-card">
         <span class="feature-number">02</span>
-        <h3>Smartphone-Based Traffic Clearance</h3>
-        <p>
-          Uses GPS and accelerometer data from nearby drivers’ smartphones with a Random Forest
-          classifier to predict yielding behavior and trigger tiered alerts with personalized alarms.
-        </p>
+        <h3>Smartphone Traffic Clearance</h3>
+        <p>GPS and accelerometer data from nearby drivers, classified by Random Forest, triggering tiered personalized alarms.</p>
       </div>
-
       <div class="feature-card">
         <span class="feature-number">03</span>
-        <h3>Patient Risk Prediction &amp; QR Access</h3>
-        <p>
-          Gives patients a consent-based lock-screen QR widget for emergency access to digital
-          health profiles, while an edge AI model classifies risk and produces contextual summaries.
-        </p>
+        <h3>Patient Risk &amp; QR Access</h3>
+        <p>Consent-based lock-screen QR widget, edge-AI risk classification, and AI-generated clinical summaries for handover.</p>
       </div>
-
       <div class="feature-card">
         <span class="feature-number">04</span>
-        <h3>Pre-Veterinary Emergency Triage</h3>
-        <p>
-          Integrates wearable pet data, owner-reported symptoms, and AI triage models to produce
-          urgency classification and a Pre-Vet Alert Package for real-time veterinary preparation.
-        </p>
+        <h3>Pre-Veterinary Triage</h3>
+        <p>Wearable pet biometrics fused with symptom data to produce urgency score and Pre-Vet Alert Package before arrival.</p>
       </div>
     </div>
   </section>
 
   <!-- =========================
-       5. References
-  ========================== -->
-  <section class="section" id="references">
-    <div class="section-header">
-      <h2>References</h2>
-    </div>
-
-    <ol class="references-list ieee-references">
-      <li>
-        <span class="ref-number">[1]</span>
-        <span class="ref-text">
-          A. Noah and A. John, “Adaptive traffic light control and ambulance
-          prioritization through Kalman filter-based congestion prediction and
-          accident alerts,” in <em>Proc. Int. Conf. Intelligent Transportation Systems</em>, 2025.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[2]</span>
-        <span class="ref-text">
-          G. Marvin <em>et al.</em>, “Occupation-induced fatigue and impacts on
-          emergency first responders: A systematic review,”
-          <em>Int. J. Environ. Res. Public Health</em>, vol. 20, no. 22, p. 7055, 2023.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[3]</span>
-        <span class="ref-text">
-          J. R. Fricton and D. Davies, “Personal health records to improve health
-          information exchange and patient safety,” in <em>Advances in Patient Safety</em>.
-          Rockville, MD, USA: Agency for Healthcare Research and Quality, 2008.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[4]</span>
-        <span class="ref-text">
-          J. Manikandan <em>et al.</em>, “Smart traffic clearance system for
-          emergency vehicles,” <em>Tuijin Jishu/J. Propulsion Technol.</em>,
-          vol. 45, no. 1, pp. 1704–1707, 2024.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[5]</span>
-        <span class="ref-text">
-          A. Banshwar <em>et al.</em>, “An efficient approach for ambulance tracking
-          system using GPS and GSM,” <em>J. Phys.: Conf. Ser.</em>,
-          vol. 1854, p. 012009, 2021.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[6]</span>
-        <span class="ref-text">
-          V. Owen and N. Surantha, “Computer vision-based drowsiness detection
-          using handcrafted feature extraction for edge computing devices,”
-          <em>Appl. Sci.</em>, vol. 15, no. 638, 2025.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[7]</span>
-        <span class="ref-text">
-          O. F. Hassan <em>et al.</em>, “Real-time driver drowsiness detection
-          using transformer architectures,” <em>Sci. Rep.</em>,
-          vol. 15, no. 17493, 2025.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[8]</span>
-        <span class="ref-text">
-          A. Mullins <em>et al.</em>, “The effect of My Health Record use in the
-          emergency department on clinician-assessed patient care,”
-          <em>BMC Med. Inform. Decis. Mak.</em>, vol. 22, no. 178, 2022.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[9]</span>
-        <span class="ref-text">
-          D. Van Veen <em>et al.</em>, “Clinical text summarization: Adapting
-          large language models can outperform human experts,”
-          <em>Nature Med.</em>, 2024.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[10]</span>
-        <span class="ref-text">
-          Z. Yu <em>et al.</em>, “Design of an intelligent wearable device for
-          real-time cattle health monitoring,” <em>Front. Robot. AI</em>,
-          vol. 11, p. 1441960, 2024.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[11]</span>
-        <span class="ref-text">
-          D. Gowthami <em>et al.</em>, “Smart animal health monitoring system using IoT,”
-          <em>Int. Res. J. Eng. Technol.</em>, vol. 5, no. 5, pp. 247–250, 2023.
-        </span>
-      </li>
-
-      <li>
-        <span class="ref-number">[12]</span>
-        <span class="ref-text">
-          G. Aravind <em>et al.</em>, “PawSense: AI-IoT enabled smart pet care for
-          real-time health monitoring,” in <em>Proc. ICAISS</em>, 2025.
-        </span>
-      </li>
-    </ol>
-  </section>
-  <!-- =========================
-       6. Research Gaps
-  ========================== -->
-  <section class="section" id="gaps">
-    <div class="section-header">
-      <!-- <p class="section-label">6. Research Gaps</p> -->
-      <h2>Research Gaps</h2>
-    </div>
-
-    <div class="card-grid">
-      <div class="feature-card">
-        <h3>Fragmented EMS Solutions</h3>
-        <p>Existing systems treat fatigue monitoring, traffic clearance, and patient information as separate functions.
-        </p>
-      </div>
-      <div class="feature-card">
-        <h3>Roadside Hardware Dependence</h3>
-        <p>Many traffic-prioritization systems rely on infrastructure that is too expensive for wide rural deployment.
-        </p>
-      </div>
-      <div class="feature-card">
-        <h3>Limited Edge-AI Handover Support</h3>
-        <p>Few systems provide AI-generated summaries and risk prediction directly on edge devices for hospital
-          handover.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Veterinary Emergency Gap</h3>
-        <p>No existing system fully combines wearable pet data, owner symptom reports, urgency triage, and pre-arrival
-          veterinary alerts in one platform.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================
-       7. Research Questions
-  ========================== -->
-  <section class="section" id="questions">
-    <div class="section-header">
-      <!-- <p class="section-label">7. Research Questions</p> -->
-      <h2>Research Questions</h2>
-    </div>
-
-    <div class="download-list">
-      <div class="card"><strong>RQ1:</strong> How can edge AI improve real-time crew fatigue and stress monitoring in
-        ambulance environments?</div>
-      <div class="card"><strong>RQ2:</strong> How can smartphone-only sensing be used to improve driver compliance and
-        ambulance road clearance?</div>
-      <div class="card"><strong>RQ3:</strong> How can QR-enabled digital health records and edge-AI risk prediction
-        improve emergency handover?</div>
-      <div class="card"><strong>RQ4:</strong> How can wearable pet data and owner-reported symptoms be fused for
-        real-time veterinary emergency triage?</div>
-      <div class="card"><strong>RQ5:</strong> How can all four components operate together in a unified low-power
-        platform with offline fallback?</div>
-    </div>
-  </section>
-
-  <!-- =========================
-       8. Research Objectives
-  ========================== -->
-  <section class="section" id="objectives">
-    <div class="section-header">
-      <!-- <p class="section-label">8. Research Objectives</p> -->
-      <h2>Research Objectives</h2>
-    </div>
-
-    <div class="card-grid">
-      <div class="feature-card">
-        <h3>Objective 1</h3>
-        <p>Develop a dual-role fatigue and stress monitoring system for ambulance drivers and paramedics.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Objective 2</h3>
-        <p>Design a smartphone-based traffic clearance module that predicts yielding behavior without roadside hardware.
-        </p>
-      </div>
-      <div class="feature-card">
-        <h3>Objective 3</h3>
-        <p>Implement QR-enabled patient health access and edge-based medical risk classification for emergency handover.
-        </p>
-      </div>
-      <div class="feature-card">
-        <h3>Objective 4</h3>
-        <p>Build an AI-powered pre-veterinary triage module that classifies urgency using wearable and symptom data.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================
-       9. Tools & Tech (One by one list - preserved data)
+       Tools & Tech
   ========================== -->
   <section class="section" id="tools">
-    <div class="section-header">
-      <!-- <p class="section-label">9. Tools &amp; Tech</p> -->
-      <h2>Tools &amp; Tech</h2>
+    <div class="section-header center">
+      <p class="section-label">Technology</p>
+      <h2>Tools &amp; Tech Stack</h2>
     </div>
-
     <div class="tech-stack-list" id="techStackList"></div>
   </section>
 
   <!-- =========================
-       10. Project Timeline
+       Pricing
   ========================== -->
-  <section class="section" id="timeline">
+  <section class="section pricing-section" id="pricing">
     <div class="section-header center">
-      <h2>Project Timeline</h2>
+      <p class="section-label">Subscription Plans</p>
+      <h2>Simple, Transparent Pricing</h2>
+      <p class="section-sub">Designed for EMS operators, hospital networks, and municipal emergency agencies. No hidden costs — full platform, full support.</p>
     </div>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-date">Month 1 – 2</span>
-          <h3>Research</h3>
-          <p>
-            Conducted background research, requirement analysis, literature review,
-            and site observations to identify key problems in mushroom cultivation.
-          </p>
+    <div class="pricing-grid">
+
+      <!-- Starter -->
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <p class="plan-name">Starter</p>
+          <div class="plan-price">
+            <span class="price-amount">LKR 75,000</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <p class="plan-desc">For pilot programs and smaller EMS units evaluating smart emergency technology.</p>
         </div>
+        <ul class="plan-features">
+          <li>✓ 1 active ambulance unit</li>
+          <li>✓ Crew fatigue monitoring module</li>
+          <li>✓ Smartphone traffic clearance</li>
+          <li>✓ Flutter mobile app (Android APK)</li>
+          <li>✓ Firebase Realtime Database</li>
+          <li>✓ Email support (48h SLA)</li>
+          <li class="plan-feature-off">✗ Patient risk &amp; QR module</li>
+          <li class="plan-feature-off">✗ Pre-vet triage module</li>
+          <li class="plan-feature-off">✗ React EMS dashboard</li>
+          <li class="plan-feature-off">✗ Dedicated onboarding</li>
+        </ul>
+        <a href="#contact" class="btn secondary plan-btn">Get Started</a>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-date">Month 3 – 7</span>
-          <h3>Development</h3>
-          <p>
-            Designed and developed the Fog-IoT system with sensor monitoring,
-            fog-based processing, cloud integration, machine learning, alerts,
-            and dashboard features.
-          </p>
+      <!-- Professional (Featured) -->
+      <div class="pricing-card pricing-card-featured">
+        <div class="pricing-badge-top">Most Popular</div>
+        <div class="pricing-header">
+          <p class="plan-name">Professional</p>
+          <div class="plan-price">
+            <span class="price-amount">LKR 150,000</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <p class="plan-desc">Full platform access for mid-size EMS operators and hospital emergency networks.</p>
         </div>
+        <ul class="plan-features">
+          <li>✓ Up to 5 active ambulance units</li>
+          <li>✓ All 4 AI modules active</li>
+          <li>✓ Flutter mobile apps (all roles)</li>
+          <li>✓ React EMS monitoring dashboard</li>
+          <li>✓ Firebase + AWS Lambda backend</li>
+          <li>✓ Raspberry Pi 5 edge deployment</li>
+          <li>✓ MQTT + FCM real-time alerts</li>
+          <li>✓ Dedicated onboarding (2 sessions)</li>
+          <li>✓ Priority support (8h SLA)</li>
+          <li>✓ Monthly performance reports</li>
+        </ul>
+        <a href="#contact" class="btn primary plan-btn">Subscribe Now</a>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-date">Month 8 – 9</span>
-          <h3>Testing</h3>
-          <p>
-            Tested the system under different conditions, evaluated model performance,
-            checked real-time alerts, and validated system reliability.
-          </p>
+      <!-- Enterprise -->
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <p class="plan-name">Enterprise</p>
+          <div class="plan-price">
+            <span class="price-amount">Custom</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <p class="plan-desc">For national EMS agencies, large hospital groups, and municipal deployments at scale.</p>
         </div>
+        <ul class="plan-features">
+          <li>✓ Unlimited ambulance units</li>
+          <li>✓ All 4 AI modules + custom training</li>
+          <li>✓ White-label mobile app</li>
+          <li>✓ Custom React dashboard</li>
+          <li>✓ Dedicated AWS infrastructure</li>
+          <li>✓ Veterinary portal licensing</li>
+          <li>✓ On-site deployment &amp; training</li>
+          <li>✓ 24/7 dedicated support (2h SLA)</li>
+          <li>✓ API access &amp; integration support</li>
+          <li>✓ Quarterly model re-training</li>
+        </ul>
+        <a href="#contact" class="btn secondary plan-btn">Contact Sales</a>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-date">Month 10 – 12</span>
-          <h3>Documentation</h3>
-          <p>
-            Completed final thesis, research paper, presentation materials,
-            system documentation, and final improvements.
-          </p>
-        </div>
+    </div>
+
+    <!-- Value props below pricing -->
+    <div class="pricing-trust-row">
+      <div class="trust-item">
+        <span class="trust-icon">🔒</span>
+        <p>Data stays on-device<br>by default</p>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">⚡</span>
+        <p>Under 50ms inference<br>on edge hardware</p>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">📱</span>
+        <p>Works offline<br>with local fallback</p>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🌐</span>
+        <p>No roadside hardware<br>required</p>
       </div>
     </div>
   </section>
 
   <!-- =========================
-     11. Our Team
+       APK Download CTA
+  ========================== -->
+  <section class="section apk-cta-section" id="download">
+    <div class="apk-cta-inner">
+      <div class="apk-cta-text">
+        <h2>Get the Mobile App</h2>
+        <p>The Cognitive Ambulance Android APK supports ambulance crew, patients, and pet owners. Available immediately with a Professional or Enterprise subscription.</p>
+        <div class="apk-cta-badges">
+          <span class="apk-badge">Flutter 3.x</span>
+          <span class="apk-badge">Android 8.0+</span>
+          <span class="apk-badge">Offline Capable</span>
+          <span class="apk-badge">MQTT Real-Time</span>
+        </div>
+      </div>
+      <div class="apk-cta-action">
+        <button class="btn primary apk-big-btn" onclick="triggerApkDownload(event)">
+          ⬇ Download APK
+        </button>
+        <p class="apk-version-note">v1.0.0-release · 28.4 MB · Android 8.0+</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       Team
   ========================== -->
   <section class="section" id="team">
     <div class="section-header center">
-      <!-- <p class="section-label">11. Our Team</p> -->
-      <h2>Our Team</h2>
+      <p class="section-label">The Team</p>
+      <h2>Built By</h2>
     </div>
 
     <div class="team-grid">
       <div class="team-card">
         <img src="images/samantha-sir.jpeg" alt="Prof. Samantha Rajapaksha" class="team-avatar-img" />
         <h4>Prof. Samantha Rajapaksha</h4>
-        <span>Supervisor</span>
+        <span>Principal Supervisor</span>
       </div>
       <div class="team-card">
         <img src="images/sanvitha-madm.jpeg" alt="Dr. Sanvitha Kasthuriarachchi" class="team-avatar-img" />
@@ -596,123 +358,47 @@
       <div class="team-card">
         <img src="images/charindu.jpeg" alt="Charindu Liyanage" class="team-avatar-img" />
         <h4>Charindu Liyanage</h4>
-        <span>IT22366290</span>
+        <span>Lead Engineer</span>
       </div>
       <div class="team-card">
         <img src="images/wasa.jpeg" alt="Wasath Jayasundara" class="team-avatar-img" />
         <h4>Wasath Jayasundara</h4>
-        <span>IT22320582</span>
+        <span>AI Engineer</span>
       </div>
       <div class="team-card">
         <img src="images/Dileeshara.png" alt="Dileeshara Hasarinda" class="team-avatar-img" />
         <h4>Dileeshara Hasarinda</h4>
-        <span>IT22035912</span>
+        <span>Mobile Engineer</span>
       </div>
       <div class="team-card">
         <img src="images/ashen.jpeg" alt="Ashen Kumarathunga" class="team-avatar-img" />
         <h4>Ashen Kumarathunga</h4>
-        <span>IT22904546</span>
+        <span>Backend Engineer</span>
       </div>
     </div>
   </section>
 
   <!-- =========================
-       12. Documents
-  ========================== -->
-  <section class="section" id="documents">
-    <div class="section-header center">
-      <h2>Documents</h2>
-    </div>
-
-    <div class="documents-grid">
-      <a class="document-card"
-        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F1%2E%20Project%20Proposal&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
-        target="_blank" rel="noopener noreferrer">
-        <div class="document-content">
-          <h3>Project Proposal</h3>
-          <p>Initial proposal submission</p>
-          <span>Proposal.pdf</span>
-        </div>
-      </a>
-
-      <a class="document-card"
-        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F6%2E%20CheckList%20Documents%2FCheckList%20set%201&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2">
-        <div class="document-content">
-          <h3>Checklist 1</h3>
-          <p>First evaluation checklist</p>
-          <span>Checklist1.pdf</span>
-        </div>
-      </a>
-
-      <a class="document-card"
-        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F2%2E%20Progress%20Presentation%20%2D%201&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
-        target="_blank" rel="noopener noreferrer">
-        <div class="document-content">
-          <h3>Progress Presentation - 1</h3>
-          <p>First progress review slides</p>
-          <span>Progress_Presentation1.pptx</span>
-        </div>
-      </a>
-
-      <a class="document-card"
-        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F4%2E%20Research%20Paper&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
-        target="_blank" rel="noopener noreferrer">
-        <div class="document-content">
-          <h3>Research Paper</h3>
-          <p>Conference/Journal papers</p>
-          <span>Research_Paper.pdf</span>
-        </div>
-      </a>
-
-      <a class="document-card"
-        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F3%2E%20Progress%20Presentation%20%2D%202&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
-        target="_blank" rel="noopener noreferrer">
-        <div class="document-content">
-          <h3>Progress Presentation - 2</h3>
-          <p>Second progress review slides</p>
-          <span>Progress_Presentation2.pptx</span>
-        </div>
-      </a>
-
-      <div class="document-card multi-file-card">
-        <a href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F5%2E%20Final%20Report%20%26%20Presentation%2FFinal%20Reports&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
-          target="_blank" rel="noopener noreferrer" class="document-content inner-doc-link">
-          <h3>Final Report &amp; Presentation</h3>
-          <p>Final report document and defense slides</p>
-          <span>Final_Report.pdf</span>
-        </a>
-
-        <a href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F5%2E%20Final%20Report%20%26%20Presentation%2FFinal%20Presentation%20PPT&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
-          target="_blank" rel="noopener noreferrer" class="extra-file-link">
-          Final_Presentation.pptx
-        </a>
-      </div>
-
-      <a class="document-card"
-        href="https://mysliit.sharepoint.com/sites/CDAPSubmissionCloud/2526JCloud/Forms/AllItems.aspx?id=%2Fsites%2FCDAPSubmissionCloud%2F2526JCloud%2F25%2D26J%2D215%2DStudents%2F6%2E%20CheckList%20Documents%2FCheckList%20set%202&viewid=b6c5e95e%2Dd054%2D4e72%2Dbb46%2D33a9940141f2"
-        target="_blank" rel="noopener noreferrer">
-        <div class="document-content">
-          <h3>Checklist 2</h3>
-          <p>Final evaluation checklist</p>
-          <span>Checklist2.pdf</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- =========================
-       13. Contact Us
+       Contact
   ========================== -->
   <section class="section" id="contact">
-    <div class="section-header">
-      <!-- <p class="section-label">13. Contact Us</p> -->
-      <h2>Contact Us</h2>
+    <div class="section-header center">
+      <p class="section-label">Get In Touch</p>
+      <h2>Start Your Deployment</h2>
+      <p class="section-sub">Interested in a demo, a subscription, or a custom enterprise quote? Reach out and our team will respond within 24 hours.</p>
     </div>
 
     <form class="contact-form" id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Email Address" required />
-      <textarea id="message" placeholder="Write your message here..." required></textarea>
+      <input type="text" id="name" placeholder="Your Name / Organization" required />
+      <input type="email" id="email" placeholder="Work Email Address" required />
+      <select id="planInterest" class="form-select">
+        <option value="" disabled selected>I'm interested in... (optional)</option>
+        <option value="starter">Starter Plan — LKR 75,000/mo</option>
+        <option value="professional">Professional Plan — LKR 150,000/mo</option>
+        <option value="enterprise">Enterprise Plan — Custom Pricing</option>
+        <option value="demo">Requesting a Demo</option>
+      </select>
+      <textarea id="message" placeholder="Tell us about your use case or ask any questions..." required></textarea>
       <button type="submit" class="btn primary">Send Message</button>
     </form>
 
@@ -721,10 +407,32 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2026 Cognitive Ambulance System • Edge-AI Emergency Medical Platform</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-mark" style="display:inline-flex;width:32px;height:32px;font-size:0.85rem;">CA</div>
+        <span>Cognitive Ambulance System</span>
+      </div>
+      <p class="footer-tagline">Edge-AI Emergency Medical Platform &bull; LKR 150,000 / month</p>
+      <p class="footer-copy">© 2026 Cognitive Ambulance System. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- APK Download Modal -->
+  <div class="apk-modal" id="apkModal">
+    <div class="apk-modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-icon">📱</div>
+      <h3>Download Cognitive Ambulance APK</h3>
+      <p>The APK download will begin automatically. If it doesn't start, click the button below.</p>
+      <p class="modal-note">A valid subscription is required to use the full platform features.</p>
+      <a href="downloads/cognitive-ambulance-v1.0.0.apk" download class="btn primary modal-download-btn" id="modalDownloadBtn">
+        ⬇ Download APK (v1.0.0)
+      </a>
+      <p class="apk-version-note">v1.0.0-release · Android 8.0+ · Flutter 3.x</p>
+    </div>
+  </div>
+  <div class="modal-overlay" id="modalOverlay"></div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
